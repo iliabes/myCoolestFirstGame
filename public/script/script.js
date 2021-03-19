@@ -9,6 +9,21 @@ let coins = []
 let pointNumber = 0
 
 
+var container = new PIXI.Container();
+var gameOver = new PIXI.Container();
+
+function gameIsOver(){
+  container.destroy()
+  let messageGameOver = new PIXI.Text('Game Over !',{fontFamily : 'Arial', fontSize: 44, fill : 0xff1010, align : 'center'});
+  messageGameOver.x = app.view.width/2 - messageGameOver.width/2 
+  messageGameOver.y = app.view.height/2 + messageGameOver.height/2 
+  app.stage.addChild(gameOver);
+  gameOver.addChild(messageGameOver)
+  console.log(text)
+}
+
+app.stage.addChild(container);
+
 app.renderer.resize(innerWidth, 500);
 document.body.appendChild(app.view);
 
@@ -27,7 +42,7 @@ point.height = 30;
 point.anchor.set(0.5);
 
 
-
+let messageGameOver = new PIXI.Text('Game Over !',{fontFamily : 'Arial', fontSize: 44, fill : 0xff1010, align : 'center'});
 let text = new PIXI.Text(pointNumber,{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
 console.log(text)
 
@@ -43,10 +58,8 @@ function createCoin(number){
     coin.height = 30
     coin.anchor.set(0.5)
     coins.push(coin)
-    app.stage.addChild(coin)
+    container.addChild(coin)
     app.ticker.add((delta) => {
-      // rotate the container!
-      // use delta to create frame-independent transform
       coin.rotation -= 0.01 * delta;
     });
   }
@@ -65,21 +78,22 @@ wall.anchor.set(0.5);
 
 
 
-app.stage.addChild(player,text);
+container.addChild(player,text);
+// container.destroy()
 
 function movePlayer(e) {
   switch (e.key) {
     case "a":
-      player.x = player.x - 5;
+      player.x = player.x - 15;
       break;
     case "d":
-      player.x = player.x + 5;
+      player.x = player.x + 15;
       break;
     case "s":
-      player.y = player.y + 5;
+      player.y = player.y + 15;
       break;
     case "w":
-      player.y = player.y - 5;
+      player.y = player.y - 15;
       break;
   }
 }
@@ -109,11 +123,12 @@ function collader(player,object){
 function checkPoint(){
   pointNumber = pointNumber + 1
   text.text = pointNumber
-  if(pointNumber > 3){}
+  if(pointNumber > 3){
+    gameIsOver()
+  }
 }
 
-// function random(min, max) {
-//   return min + Math.random() * (max - min);
+
 function random(min, max){return Math.floor(Math.random() * (max - min + 1) + min)}
 
 function generateСoordinates(){
@@ -147,34 +162,4 @@ window.addEventListener("keydown", movePlayer);
 window.addEventListener("keydown", () => {collader(player, point);
 });
 
-
-// function collader(object, player, action) {
-//   let playerWidth = player.width;
-//   let playerHeight = player.height;
-//   coins.forEach((item,index)=>{
-
-//   })
-//   if (
-//     player.x + playerWidth / 2 >= object.x - object.width / 2 &&
-//     player.x - playerWidth / 2 <= object.x + object.width / 2 &&
-//     player.y - player.height / 2 <= object.y + object.height / 2 &&
-//     player.y + player.height / 2 >= object.y - object.height / 2
-//   ) {
-//     console.log("collaid");
-//     point.destroy();
-//   }
-// }
-
-
-// function createCoin(){
-//   console.log('createCoin')
-//   coin = new PIXI.Sprite.from('../img/coin.bmp')
-//   coin.x = 500 + 40 * coins.length
-//   coin.y = 50
-//   coin.width = 30
-//   coin.height = 30
-//   coins.push(coin)
-//   app.stage.addChild(coin)
-// }
-
-
+console.log(app)
