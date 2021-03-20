@@ -102,7 +102,7 @@
         <key>algorithmSettings</key>
         <struct type="AlgorithmSettings">
             <key>algorithm</key>
-            <enum type="AlgorithmSettings::AlgorithmId">Grid</enum>
+            <enum type="AlgorithmSettings::AlgorithmId">Basic</enum>
             <key>freeSizeMode</key>
             <enum type="AlgorithmSettings::AlgorithmFreeSizeMode">Best</enum>
             <key>sizeConstraints</key>
@@ -132,7 +132,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename></filename>
+                <filename>curcleSheet.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -175,69 +175,46 @@
             <key>heuristicMask</key>
             <false/>
             <key>defaultPivotPoint</key>
-            <point_f>0.59322,0.457627</point_f>
+            <point_f>0,0</point_f>
             <key>writePivotPoints</key>
-            <true/>
+            <false/>
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">player.bmp</key>
+            <key type="filename">1.png</key>
+            <key type="filename">2.png</key>
+            <key type="filename">3.png</key>
+            <key type="filename">4.png</key>
+            <key type="filename">5.png</key>
+            <key type="filename">6.png</key>
+            <key type="filename">7.png</key>
+            <key type="filename">8.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.508475,0.509804</point_f>
+                <point_f>0.5,0.5</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>15,13,29,25</rect>
+                <rect>8,8,15,15</rect>
                 <key>scale9Paddings</key>
-                <rect>15,13,29,25</rect>
+                <rect>8,8,15,15</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">pont.bmp</key>
+            <key type="filename">curcleSheet.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.40678,0.457627</point_f>
+                <point_f>0,0</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>15,15,29,29</rect>
+                <rect>60,8,120,15</rect>
                 <key>scale9Paddings</key>
-                <rect>15,15,29,29</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">pont.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.59322,0.457627</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>15,15,29,29</rect>
-                <key>scale9Paddings</key>
-                <rect>15,15,29,29</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">wall.bmp</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.484076,0.475862</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>39,36,79,73</rect>
-                <key>scale9Paddings</key>
-                <rect>39,36,79,73</rect>
+                <rect>60,8,120,15</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
