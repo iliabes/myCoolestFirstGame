@@ -23,16 +23,13 @@ document.body.appendChild(app.view);
 
 //-----------1f method
 // let animatedImg = ['../img/curcle/1.png','../img/curcle/2.png','../img/curcle/3.png','../img/curcle/4.png','../img/curcle/5.png','../img/curcle/6.png','../img/curcle/7.png','../img/curcle/8.png']
-// massImage = [
-//   PIXI.Texture.from('../img/curcle/1.png'),
-//   PIXI.Texture.from('../img/curcle/2.png'),
-//   PIXI.Texture.from('../img/curcle/3.png'),
-//   PIXI.Texture.from('../img/curcle/4.png'),
-//   PIXI.Texture.from('../img/curcle/5.png'),
-//   PIXI.Texture.from('../img/curcle/6.png'),
-//   PIXI.Texture.from('../img/curcle/7.png'),
-//   PIXI.Texture.from('../img/curcle/8.png')
-// ]
+massImage = [
+  PIXI.Texture.from('../img/cosmospider/3.png'),
+  PIXI.Texture.from('../img/cosmospider/4.png'),
+  PIXI.Texture.from('../img/cosmospider/5.png'),
+  PIXI.Texture.from('../img/cosmospider/6.png'),
+  PIXI.Texture.from('../img/cosmospider/7.png'),
+]
 // let textureArr = []
 // for(let i = 0; i < animatedImg.length; i++){
 //   let texture = PIXI.Texture.from(animatedImg[i])
@@ -125,7 +122,7 @@ function movePlayer(e) {
     case "d":
       massOnKey['d'] = true
       console.log(massOnKey)
-      player._textures = superMassWitchTexture;
+      player._textures = massImage;
       player.play()
       player.x = player.x + 15;
       reverseX()
