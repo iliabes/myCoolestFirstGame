@@ -42,6 +42,23 @@ point.height = 30;
 point.anchor.set(0.5);
 
 
+// new PIXI.Sprite.from('../img/coin.bmp')
+//-----
+let coninsSpreite = [
+  new PIXI.Sprite.from('../img/coin/pont0.png'),
+  new PIXI.Sprite.from('../img/coin/pont1.png'),
+  new PIXI.Sprite.from('../img/coin/pont2.png'),
+  new PIXI.Sprite.from('../img/coin/pont3.png'),
+  new PIXI.Sprite.from('../img/coin/pont4.png'),
+  new PIXI.Sprite.from('../img/coin/pont5.png'),
+  new PIXI.Sprite.from('../img/coin/pont6.png')
+]
+let animatedCoin = new PIXI.AnimatedSprite(coninsSpreite);
+
+//---
+
+
+
 let messageGameOver = new PIXI.Text('Game Over !',{fontFamily : 'Arial', fontSize: 44, fill : 0xff1010, align : 'center'});
 let text = new PIXI.Text(pointNumber,{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
 console.log(text)
@@ -78,7 +95,7 @@ wall.anchor.set(0.5);
 
 
 
-container.addChild(player,text);
+container.addChild(player,text,animatedCoin);
 // container.destroy()
 
 function movePlayer(e) {
