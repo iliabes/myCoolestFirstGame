@@ -46,26 +46,7 @@ wall.anchor.set(0.5);
 
 app.stage.addChild(player,point,wall)
 
-function movePlayer(e){
-    switch (e.key) {
-        case 'a':
-          player.x = player.x - 5;
-          camera.x =camera.x - 5;
-          break;
-        case 'd':
-          player.x = player.x + 5;
-          camera.x =camera.x + 5;
-          break;
-        case 's':
-          player.y = player.y + 5;
-          break;
-        case 'w':
-          
-          player.y = player.y - 5;
-          break;
-      }
 
-}
 
 function collader(object,player,action){
   let playerWidth =  player.width
@@ -80,6 +61,6 @@ function collader(object,player,action){
 
 
 
-window.addEventListener('keydown',movePlayer)
+
 window.addEventListener('keydown',()=>{collader(player,point)})
 
