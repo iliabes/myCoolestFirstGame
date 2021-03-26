@@ -18,6 +18,10 @@ let player = new PIXI.Graphics();
 player.lineStyle(2, 0x00ff00, 1);
 player.drawRect(110, 110, 30, 30);
 player.endFill();
+
+
+
+
 app.stage.addChild(player)
 
 

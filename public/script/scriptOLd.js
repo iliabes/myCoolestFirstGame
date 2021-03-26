@@ -31,12 +31,12 @@ console.log(camera.x)
 // player.drawCircle(100,100,50)
 // player.endFill()
 
-let point = new PIXI.Sprite.from('../img/pont.png')
-point.x = camera.x + 500;
-point.y = camera.y + 200;
-point.width = 30;
-point.height = 30;
-point.anchor.set(0.5);
+let coin = new PIXI.Sprite.from('../img/pont.png')
+coin.x = camera.x + 500;
+coin.y = camera.y + 200;
+coin.width = 30;
+coin.height = 30;
+coin.anchor.set(0.5);
 
 let wall = new PIXI.Sprite.from('../img/wall.bmp')
 wall.x = camera.x+0;
@@ -44,7 +44,7 @@ wall.y = camera.y+0;
 wall.height = 30;
 wall.anchor.set(0.5);
 
-app.stage.addChild(player,point,wall)
+app.stage.addChild(player,coin,wall)
 
 
 
@@ -54,7 +54,7 @@ function collader(object,player,action){
     console.log((object.x+object.width/2),(player.x + playerWidth/2))
      if((player.x + playerWidth/2) >= (object.x - object.width/2) && (player.x - playerWidth/2) <= (object.x+object.width/2) &&(player.y - player.height/2 <=object.y + object.height/2  ) && (player.y + player.height/2 >=object.y - object.height/2  )   ){
        console.log('collaid')
-       point.destroy()
+       coin.destroy()
      }
 
     }
@@ -62,5 +62,5 @@ function collader(object,player,action){
 
 
 
-window.addEventListener('keydown',()=>{collader(player,point)})
+window.addEventListener('keydown',()=>{collader(player,coin)})
 

@@ -41,7 +41,6 @@ function upKey(e){
 }
 
 function move(){
-    console.log(key.left,key.right,key.down,key.up)
     if(key.left){
         player.x = player.x - 5;
     }
