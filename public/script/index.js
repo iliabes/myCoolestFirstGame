@@ -17,8 +17,11 @@ app.stage.addChild(game)
 let player = new PIXI.Graphics();
 player.lineStyle(2, 0x00ff00, 1);
 player.drawRect(110, 110, 30, 30);
+// player.anchor.x = 0.5;
+// player.anchor.y = 0.5;
 player.endFill();
-
+player.x = 0;
+player.y = 0
 
 
 
