@@ -154,7 +154,7 @@ function createWebChildSpider(){
  childSpaider.gotoAndStop(1)
  childSpaider.loop = false;
  childSpaider.rotation = 0
- childSpaider.dx = 4
+ childSpaider.dx = .6
  childSpaider.dy = .5
 
 
@@ -238,7 +238,7 @@ setInterval(createMeteor, 2000);
 setInterval(()=>{collader(arrCoins,player,collisionCoin),collader(meteors,player,collisionMeteor)},300);
 setInterval(()=>{moveDown(arrCoins),moveDown(meteors)},1);
 let animateWeb = setInterval(()=>{
-  childSpaider.rotation = childSpaider.rotation + .01
+  childSpaider.rotation = childSpaider.rotation + .01 /2
   childSpaider.x += childSpaider.dx
   childSpaider.y += childSpaider.dy
   // childSpaider.y += childSpaider.dy
