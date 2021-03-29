@@ -10,13 +10,31 @@ document.body.appendChild(app.view)
 
 //start
 let start = new PIXI.Container();
-let textStart = new PIXI.Text('Start',{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
+let front = PIXI.Sprite.from('../img/cosmospider/cosmospiderFront.png')
+front.anchor.x = 0.5;
+front.anchor.y = 0.5;
+front.x = app.view.width/2
+front.y = app.view.height/2 - 100
+start.addChild(front)
+
+
+let textStart = new PIXI.Text('Start',{fontFamily : 'Arial', fontSize: 34, fill : 0xff1010, align : 'center'});
+textStart.x = 0
+textStart.y = 0
 start.addChild(textStart)
+
+
+textStart.x = Math.round(app.view.width/2)
+textStart.y = Math.round(app.view.height/2 + 150)
+textStart.anchor.x = 0.5;
+textStart.anchor.y = 0.5;
 app.stage.addChild(start)
 console.log(textStart.width)
 window.addEventListener('click',(e)=>{
-  console.log(e.x)
-  if(e.x > textStart.x && e.x < textStart.width && e.y > textStart.y && e.y < textStart.height){
+  console.log(e.x,e.y,textStart.x,textStart.y)
+  console.log(e.y > textStart.y && e.y <textStart.y +  textStart.height)
+  if(e.x > textStart.x -50 && e.x <textStart.x + 50 + textStart.width && e.y > textStart.y && e.y <textStart.y +  textStart.height){
+    console.log('vvvv')
     start.destroy()
     app.stage.addChild(game)
   }
@@ -24,28 +42,33 @@ window.addEventListener('click',(e)=>{
 
 
 //game
+
 let game = new PIXI.Container();
 //end game
-let end = new PIXI.Container();
-let textEnd = new PIXI.Text('You win',{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
-end.addChild(textEnd)
+
+let endLoose = new PIXI.Container();
+let lose = PIXI.Sprite.from('../img/cosmospider/lose.png')
+lose.anchor.x = 0.5;
+lose.anchor.y = 0.5;
+lose.x = app.view.width/2
+lose.y = app.view.height/2 - 100
+endLoose.addChild(lose)
+
+let endWin = new PIXI.Container();
+let win = PIXI.Sprite.from('../img/cosmospider/wine.png')
+win.anchor.x = 0.5;
+win.anchor.y = 0.5;
+win.x = app.view.width/2
+win.y = app.view.height/2 - 100
+endWin.addChild(win)
+let textEndWin = new PIXI.Text('You Win',{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
+let textEndLose = new PIXI.Text('You Lose',{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
+endLoose.addChild(textEndLose)
+endWin.addChild(textEndWin)
 
 
 
 
-
-// let player = new PIXI.Graphics();
-// player.lineStyle(2, 0x00ff00, 1);
-// player.drawRect(110, 110, 30, 30);
-// // player.anchor.x = 0.5;
-// // player.anchor.y = 0.5;
-// player.endFill();
-// player.x = 0;
-// player.y = 0
-
-
-// app.loader.add('man', './')
-// app.loader.load(manLoad)
 let spiderTexture = new PIXI.BaseTexture('../img/cosmospider/s.png')
 let spiderTextureMassive = [
   new PIXI.Texture(spiderTexture,new PIXI.Rectangle(0,0,60,60)),

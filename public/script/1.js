@@ -1,7 +1,9 @@
 //bg
-let color = '0X0c541f';
-for(let i = 0 ; i <= 11;i++ ){
-  for(let z = 0 ; z <= 9;z++ ){
+(function(){
+  console.log()
+  let color = '0X0c541f';
+for(let i = 0 ; i <= Math.round(app.view.width/100);i++ ){
+  for(let z = 0 ; z <= Math.round(app.view.height/100);z++ ){
 
   let contCross = new PIXI.Container()
   contCross.x = 100 * i;
@@ -22,3 +24,4 @@ for(let i = 0 ; i <= 11;i++ ){
   app.stage.addChild(contCross)
   }
 }
+})
