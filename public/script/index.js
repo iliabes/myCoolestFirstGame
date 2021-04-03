@@ -34,12 +34,14 @@ window.addEventListener('click',(e)=>{
   console.log(e.x,e.y,textStart.x,textStart.y)
   console.log(e.y > textStart.y && e.y <textStart.y +  textStart.height)
   if(e.x > textStart.x -50 && e.x <textStart.x + 50 + textStart.width && e.y > textStart.y && e.y <textStart.y +  textStart.height){
-    console.log('vvvv')
-    start.destroy()
-    app.stage.addChild(game)
+    startGame()
   }
 })
-
+function startGame(){
+  console.log('vvvv')
+  start.destroy()
+  app.stage.addChild(game)
+}
 
 //game
 

@@ -215,16 +215,57 @@ game.addChild(miniSpider)
 }
 
 //stars
-
+let star = PIXI.Sprite.from('../img/star1.png');
+game.addChild(star)
+star.y = -30
+star.height = app.view.height
+console.log(star.height+'asd')
+app.ticker.add(()=>{
+  star.y += .4
+  if(star.y > app.view.height + 100){
+    star.y = -app.view.height
+  }
+})
 function createStar(){
   let star = PIXI.Sprite.from('../img/star1.png');
   game.addChild(star)
+  star.x = -100
+  star.y = -app.view.height
+  star.height = app.view.height
+  console.log(star.height+'asd')
+  app.ticker.add(()=>{
+    star.y += .3
+    if(star.y > app.view.height + 100){
+      star.y = -app.view.height
+    }
+  })
 }
+
+
+let cloud = PIXI.Sprite.from('../img/patch.png')
+cloud.height =app.view.height
+cloud.x = -50
+cloud.y = -app.view.height
+app.ticker.add(()=>{
+  cloud.y += .1
+  if(cloud.y > app.view.height + 100){
+    cloud.y = -app.view.height
+  }
+})
+game.addChild(cloud)
 
 function createCloud(){
   let cloud = PIXI.Sprite.from('../img/patch.png')
-  game.addChild(cloud)
+  cloud.height =app.view.height + 100
+  cloud.x = 0
 
+  app.ticker.add(()=>{
+    cloud.y += .1
+    if(cloud.y > app.view.height + 100){
+      cloud.y = -app.view.height
+    }
+  })
+  game.addChild(cloud)
 }
 createStar()
 createCloud()
