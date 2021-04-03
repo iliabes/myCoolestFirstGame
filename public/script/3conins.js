@@ -95,7 +95,7 @@ function collisionCoin(meteor,num){
     player.haveEats = true;
   }
 }
-
+//test
 function createMeteor(){
   let meteorTexture = new PIXI.BaseTexture('../img/meteor.png')
   let meteorTextureMassive = []
